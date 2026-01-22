@@ -4,7 +4,8 @@ import { getAllArticles } from '@/lib/articles'
 export const dynamic = 'force-static'
 
 export async function GET(req) {
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ben-khan.github.io/Portfolio'
+
 
   if (!siteUrl) {
     throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
