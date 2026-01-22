@@ -113,6 +113,13 @@ function MobileNavigation(props) {
           <p>Clinical Psychologist, Educator, and Mental Health Advocate</p>
           <p className="mt-4">Scroll down to explore my education, experience, and research interests.</p>
         </div>
+        <nav className="mt-6">
+          <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+            <MobileNavItem href="/">Home</MobileNavItem>
+            <MobileNavItem href="/about">About</MobileNavItem>
+            <MobileNavItem href="/case-studies">Case Studies</MobileNavItem>
+          </ul>
+        </nav>
       </PopoverPanel>
     </Popover>
   )
@@ -142,7 +149,15 @@ function NavItem({ href, children }) {
 }
 
 function DesktopNavigation(props) {
-  return null
+  return (
+    <nav {...props}>
+      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="/about">About</NavItem>
+        <NavItem href="/case-studies">Case Studies</NavItem>
+      </ul>
+    </nav>
+  )
 }
 
 function ThemeToggle() {
